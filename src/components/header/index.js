@@ -8,6 +8,9 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: "1.5rem",
     borderBottom: "2px solid white",
     position: "relative",
+    [theme.breakpoints.down("xs")]: {
+      padding: "1rem 0",
+    },
   },
   menu: {
     [theme.breakpoints.down("xs")]: {
@@ -58,6 +61,7 @@ const useStyles = makeStyles((theme) => ({
       listStyle: "none",
       textALign: "center",
       borderRadius: "10px",
+      padding: 0,
       "& li a": {
         color: "black",
         display: "block",
