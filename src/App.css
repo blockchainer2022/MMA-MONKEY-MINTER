@@ -1,0 +1,72 @@
+@font-face {
+  font-family: "m42_Font";
+  src: url(./assets/font/m42_Font.ttf);
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "m42_Font";
+  font-size: 10px;
+}
+.App {
+  text-align: center;
+}
+
+.hero-section {
+  color: rgba(255, 255, 255, 0.87);
+  background-image: url(./assets/MMA\ Monkey_Pixel\ art_2_PNG.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+.hero-section .MuiButton-containedPrimary {
+  background: white;
+  color: black;
+  display: block;
+
+  width: fit-content;
+  margin-right: auto;
+  margin-left: auto;
+  font-family: "m42_Font";
+  margin-top: 20px;
+}
+.hero-section .MuiButton-containedPrimary span {
+  font-size: 10px;
+}
+.hero-section .MuiButton-containedPrimary:hover {
+  background-color: #fff;
+}
+.hero-section.no-wallet {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.connect-wallet {
+  text-align: center;
+  width: 100%;
+}
+.connect-wallet h1 {
+  font-size: 30px;
+  font-family: "m42_Font";
+  margin-top: 0;
+}
+
+.wallet-item {
+  display: flex;
+  justify-content: space-between;
+}
+.wallet-content .MuiButton-contained {
+  font-family: "m42_Font";
+}
+.wallet-content p {
+  margin-bottom: 1rem;
+  margin-top: 0;
+  font-size: 10px;
+}
+
+.wallet-content .MuiButtonBase-root span {
+  justify-content: center;
+}
