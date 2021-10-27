@@ -1,9 +1,9 @@
 import { Container, Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import Image1 from "../../assets/1.png";
-import Image2 from "../../assets/2.png";
-import Image3 from "../../assets/3.png";
-import Image4 from "../../assets/4.png";
+import Image1 from "../../assets/team1.png";
+import Image2 from "../../assets/team2.png";
+import Image3 from "../../assets/team3.png";
+import Image4 from "../../assets/team4.png";
 
 const data = [
   {

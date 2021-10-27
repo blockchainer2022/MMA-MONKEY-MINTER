@@ -18,7 +18,11 @@ const useStyles = makeStyles((theme) => ({
     },
     display: "flex",
     justifyContent: "end",
+    alignItems: "center",
     listStyle: "none",
+    [theme.breakpoints.up("md")]: {
+      paddingRight: "100px",
+    },
     "& li a": {
       color: "white",
       display: "inline-block",

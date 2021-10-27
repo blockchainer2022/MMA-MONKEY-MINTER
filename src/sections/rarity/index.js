@@ -13,7 +13,7 @@ const Images = [Image1, Image2, Image3, Image4, Image5, Image6, Image7, Image8];
 
 const useStyles = makeStyles({
   root: {
-    padding: "100px 0",
+    padding: "0 0 100px 0",
     textAlign: "center",
     backgroundColor: "transparent",
     "& h2": {

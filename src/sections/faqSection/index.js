@@ -5,20 +5,21 @@ import { makeStyles } from "@material-ui/core/styles";
 const accordianData = [
   {
     question: "Total supply of MMA monkeys?",
-    answer: "Jaw Breakers will be listed at .08 to mint. ",
+    answer: "There will only be 5000 OG MMA Monkeys. ",
   },
   {
     question: "What is the minting cost?",
-    answer:
-      "You will be able to mint a Jaw Breakers on release, after that you can purchase one on our opensea page. ",
+    answer: ".5 SOL for all 5000 MMA Monkeys. ",
   },
   {
     question: "Where can i buyor sel MMA monkeys?",
-    answer: "After 24 hours your Jaw Breakers will reveal itself. ",
+    answer:
+      "After mint, a marketplace will be available on DigitalEyes. We will be working on other Marketplaces as well. ",
   },
   {
     question: "will my mma monkeys help me in a street fight?",
-    answer: "There will be 10,000 Jaw Breakers. ",
+    answer:
+      "Yes! It will help you fight like Conor Mcgregor (Minus The Leg Break).",
   },
 ];
 const useStyles = makeStyles({
@@ -84,11 +85,7 @@ const Index = () => {
                     clicked === i ? classes.show : classes.hidden
                   }`}
                 >
-                  <p className="">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Sequi aut vero velit amet, eius veniam soluta aliquid error
-                    autem eum.
-                  </p>
+                  <p className="">{v.answer}</p>
                 </div>
               </div>
             ))}

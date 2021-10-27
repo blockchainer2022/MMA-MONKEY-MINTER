@@ -32,19 +32,29 @@ const MintContainer = styled.div``; // add your styles here
 
 const MintButton = styled(Button)``; // add your styles here
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme)=>({
   root: {
    textAlign:"center",
-   paddingTop:"30px",
+
+   "& h1":{
+     fontSize:"30px",
+     marginBottom:"0",
+     [theme.breakpoints.down("md")]: {
+     fontSize:"18px",
+      
+    },
+   },
    "& p":{
-    maxWidth:"750px",
+    maxWidth:"800px",
     width:"100%",
-    margin:"30px auto",
-    fontSize:"10px"
+    margin:"5px auto 10px auto",
+    fontSize:"10px",
+    lineHeight:"24px"
    },
    "& h4":{
-     fontSize:"14px",
-     marginTop:60
+     fontSize:"18px",
+     marginTop:60,
+     marginBottom:"0"
 
    },
    "&  .MuiButton-contained":{
@@ -76,14 +86,19 @@ const useStyles = makeStyles({
     textAlign:"center",
     marginTop:"50px",
     marginBottom:"50px",
+    "& h6":{
+        fontSize:"16px",
+        marginBottom:"0"
+    },
     "& p":{
       margin:0,
-      maxWidth:"100%"
+      maxWidth:"100%",
+      marginTop:"0"
     }
   }
 
 
-});
+}));
 export interface HomeProps {
   candyMachineId: anchor.web3.PublicKey;
   config: anchor.web3.PublicKey;
@@ -257,7 +272,7 @@ const Home = (props: HomeProps) => {
           <a href="#"><img src={Twitter} alt="" /></a>
        </div>
         <h4>Mint</h4>
-        <p>mint times is November 4th 1:00 PM UTC time</p>
+        <p  style={{marginTop:"0"}}>mint times is November 4th 1:00 PM UTC time</p>
        { difference < 0 ?
        <div>
        <div className={classes.walletWrapper}>
@@ -316,7 +331,7 @@ const Home = (props: HomeProps) => {
       
    
           <div className={classes.bottom}>
-            <p>Minting cost?</p>
+            <h6>Minting cost?</h6>
             <p>0.5 sol for all 5000 unit</p>
           </div>
        
