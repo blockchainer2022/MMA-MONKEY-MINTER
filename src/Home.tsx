@@ -212,7 +212,7 @@ const Home = (props: HomeProps) => {
     }
   };
 
-  const difference = +dayjs.utc('11-04-2021 19:27:00') - +new Date();
+  const difference = +dayjs.utc('11-04-2021 00:00:00') - +new Date();
   // console.log(+dayjs.utc('11-11-2021 00:00:00'))
   // const difference=0
 
