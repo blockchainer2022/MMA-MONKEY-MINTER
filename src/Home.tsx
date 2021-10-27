@@ -36,7 +36,7 @@ const useStyles = makeStyles({
    textAlign:"center",
    paddingTop:"30px",
    "& p":{
-    maxWidth:"800px",
+    maxWidth:"750px",
     width:"100%",
     margin:"30px auto",
     fontSize:"10px"
