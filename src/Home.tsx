@@ -56,6 +56,11 @@ const useStyles = makeStyles({
 
    }
   },
+  walletWrapper:{
+    maxWidth:"500px",
+    width:"100%",
+    margin:"auto"
+  },
   icon:{
     display:"flex",
     justifyContent:"center",
@@ -69,11 +74,13 @@ const useStyles = makeStyles({
   bottom:{
     textAlign:"center",
     marginTop:"50px",
+    marginBottom:"50px",
     "& p":{
       margin:0,
       maxWidth:"100%"
     }
   }
+
 
 });
 export interface HomeProps {
@@ -219,11 +226,11 @@ const Home = (props: HomeProps) => {
 
   return (
     <main className="main-wrapper">
-      <div className={`hero-section ${!wallet?"no-wallet":null}`}>
-     {wallet&&<Header/> } 
+      <div className={`hero-section`}>
+    <Header/>  
       <Container className={classes.root}>
-      {wallet && (
-        <>
+ 
+     
         <h1>MMA monkeys</h1>
         <p>A collection of 5,000 algorithmically generated, collectible,
        MMA monkeys ready to fight for the championship.</p>
@@ -233,14 +240,25 @@ const Home = (props: HomeProps) => {
        </div>
         <h4>Mint</h4>
         <p>mint times is september 14 th 1:00 PM UTC time</p>
-        </>
+       <div className={classes.walletWrapper}>
+       {wallet && (
+        <p>Wallet {shortenAddress(wallet.publicKey.toBase58() || "")}</p>
       )}
+        {wallet && <p className="wallet-item"><span> Balance: </span> <span> {(balance || 0).toLocaleString()} SOL </span> </p>}
+
+{wallet && <p  className="wallet-item"> <span>Total Available: </span> <span> {itemsAvailable} </span></p>}
+
+{wallet && <p className="wallet-item"><span> Redeemed: </span> <span> {itemsRedeemed}</span></p>}
+
+{wallet && <p className="wallet-item"><span>Remaining: </span> <span>{itemsRemaining}</span> </p>}
+
+       </div>
       <MintContainer>
         {!wallet ? (
          <div className="connect-wallet">
             <h1>MMA MONKEY DOJO</h1>
             <span>MINT YOUR MMA MONKEY</span>
-          <ConnectButton fullWidth>Connect Wallet</ConnectButton>
+          <ConnectButton fullWidth>Mint Now</ConnectButton>
         </div>
         ) : (
           <MintButton
@@ -269,28 +287,21 @@ const Home = (props: HomeProps) => {
           </MintButton>
         )}
       </MintContainer>
-      {
-        wallet&& (
+   
           <div className={classes.bottom}>
             <p>Minting cost?</p>
             <p>.5 sol for all 5000 unit</p>
           </div>
-        )
-      }
+       
         </Container>
       </div>
-      {
-        wallet && (
-          <>
-          
+
           <RatitySection/>
           <TeamSection/>
           <AboutSection/>
           <RoadmapSection/>
           <FaqSection/>
-          </>
-        )
-      }
+
       <Snackbar
         open={alertState.open}
         autoHideDuration={6000}

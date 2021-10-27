@@ -19,6 +19,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
+  padding-bottom: 50px;
 }
 .hero-section .MuiButton-containedPrimary {
   background: white;
@@ -69,4 +70,7 @@ body {
 
 .wallet-content .MuiButtonBase-root span {
   justify-content: center;
+}
+.wallet-item {
+  font-size: 18px;
 }
