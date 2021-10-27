@@ -229,8 +229,6 @@ const Home = (props: HomeProps) => {
       <div className={`hero-section`}>
     <Header/>  
       <Container className={classes.root}>
- 
-     
         <h1>MMA monkeys</h1>
         <p>A collection of 5,000 algorithmically generated, collectible,
        MMA monkeys ready to fight for the championship.</p>
