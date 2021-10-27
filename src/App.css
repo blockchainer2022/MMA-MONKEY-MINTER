@@ -12,12 +12,14 @@ body {
 .App {
   text-align: center;
 }
-
-.hero-section {
-  color: rgba(255, 255, 255, 0.87);
+.main-wrapper {
   background-image: url(./assets/MMA\ Monkey_Pixel\ art_2_PNG.png);
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
+}
+.hero-section {
+  color: rgba(255, 255, 255, 0.87);
   min-height: 100vh;
   padding-bottom: 50px;
 }

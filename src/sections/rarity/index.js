@@ -11,6 +11,7 @@ const useStyles = makeStyles({
   root: {
     padding: "100px 0",
     textAlign: "center",
+    backgroundColor: "transparent",
     "& h2": {
       textAlign: "left",
     },
