@@ -213,11 +213,7 @@ const Home = (props: HomeProps) => {
   };
 
   const difference = +dayjs.utc('11-04-2021 00:00:00') - +new Date();
-  // console.log(+dayjs.utc('11-11-2021 00:00:00'))
-  // const difference=0
 
-
-  // console.log(days,hours)
   useEffect(() => {
     const id = setTimeout(() => {
       if (difference > 0) {
@@ -255,12 +251,15 @@ const Home = (props: HomeProps) => {
         <h1>MMA monkeys</h1>
         <p>A collection of 5,000 algorithmically generated, collectible,
        MMA monkeys ready to fight for the championship.</p>
+
        <div className={classes.icon}>
           <a href="#"><img src={Discord} alt="" /></a>
           <a href="#"><img src={Twitter} alt="" /></a>
        </div>
         <h4>Mint</h4>
         <p>mint times is september 14 th 1:00 PM UTC time</p>
+       { difference < 0 ?
+       <div>
        <div className={classes.walletWrapper}>
        {wallet && (
         <p>Wallet {shortenAddress(wallet.publicKey.toBase58() || "")}</p>
@@ -274,7 +273,7 @@ const Home = (props: HomeProps) => {
 {wallet && <p className="wallet-item"><span>Remaining: </span> <span>{itemsRemaining}</span> </p>}
         
        </div>
-       { difference < 0 ?
+      
           <MintContainer>
           {!wallet ? (
            <div className="connect-wallet">
@@ -307,8 +306,10 @@ const Home = (props: HomeProps) => {
                 />
               )}
             </MintButton>
+     
           )}
         </MintContainer> 
+        </div>
        :(
           <p style={{fontSize:"18px",marginTop:"100px"}}>{days.toString().padStart(2,"0")}:{hours.toString().padStart(2,"0")}:{minutes.toString().padStart(2,"0")}:{seconds.toString().padStart(2,"0")}</p>
         )}
