@@ -22,7 +22,8 @@ import {
   mintOneToken,
   shortenAddress,
 } from "./candy-machine";
-
+import * as dayjs from 'dayjs'
+import utc from 'dayjs/plugin/utc'
 const ConnectButton = styled(WalletDialogButton)``;
 
 const CounterText = styled.span``; // add your styles here
@@ -91,7 +92,7 @@ export interface HomeProps {
   treasury: anchor.web3.PublicKey;
   txTimeout: number;
 }
-
+dayjs.extend(utc)
 const Home = (props: HomeProps) => {
   const classes = useStyles();
   const [balance, setBalance] = useState<number>();
@@ -102,7 +103,10 @@ const Home = (props: HomeProps) => {
   const [itemsAvailable, setItemsAvailable] = useState(0);
   const [itemsRedeemed, setItemsRedeemed] = useState(0);
   const [itemsRemaining, setItemsRemaining] = useState(0);
-
+  const [days, setDays] = useState(0);
+  const [hours, setHours] = useState(0);
+  const [minutes, setMinutes] = useState(0);  
+  const [seconds, setSeconds] = useState(0);
   const [alertState, setAlertState] = useState<AlertState>({
     open: false,
     message: "",
@@ -208,7 +212,26 @@ const Home = (props: HomeProps) => {
     }
   };
 
- 
+  const difference = +dayjs.utc('11-04-2021 19:27:00') - +new Date();
+  // console.log(+dayjs.utc('11-11-2021 00:00:00'))
+  // const difference=0
+
+
+  // console.log(days,hours)
+  useEffect(() => {
+    const id = setTimeout(() => {
+      if (difference > 0) {
+        setDays(Math.floor(difference / (1000 * 60 * 60 * 24)));
+        setHours(Math.floor((difference / (1000 * 60 * 60)) % 24));
+        setMinutes(Math.floor((difference / 1000 / 60) % 60));
+        setSeconds(Math.floor((difference / 1000) % 60));
+      }
+    }, 1000);
+
+    return () => {
+      clearTimeout(id);
+    };
+  });
   useEffect(() => {
     (async () => {
       if (wallet) {
@@ -249,42 +272,47 @@ const Home = (props: HomeProps) => {
 {wallet && <p className="wallet-item"><span> Redeemed: </span> <span> {itemsRedeemed}</span></p>}
 
 {wallet && <p className="wallet-item"><span>Remaining: </span> <span>{itemsRemaining}</span> </p>}
-
+        
        </div>
-      <MintContainer>
-        {!wallet ? (
-         <div className="connect-wallet">
-            <h1>MMA MONKEY DOJO</h1>
-            <span>MINT YOUR MMA MONKEY</span>
-          <ConnectButton fullWidth>Mint Now</ConnectButton>
-        </div>
-        ) : (
-          <MintButton
-            disabled={isSoldOut || isMinting || !isActive}
-            onClick={onMint}
-            variant="contained"
-           
-            
-          >
-            {isSoldOut ? (
-              "SOLD OUT"
-            ) : isActive ? (
-              isMinting ? (
-                <CircularProgress />
+       { difference < 0 ?
+          <MintContainer>
+          {!wallet ? (
+           <div className="connect-wallet">
+              <h1>MMA MONKEY DOJO</h1>
+              <span>MINT YOUR MMA MONKEY</span>
+            <ConnectButton fullWidth>Mint Now</ConnectButton>
+          </div>
+          ) :(
+            <MintButton
+              disabled={isSoldOut || isMinting || !isActive}
+              onClick={onMint}
+              variant="contained"
+             
+              
+            >
+              {isSoldOut ? (
+                "SOLD OUT"
+              ) : isActive ? (
+                isMinting ? (
+                  <CircularProgress />
+                ) : (
+                  "MINT"
+                ) 
               ) : (
-                "MINT"
-              ) 
-            ) : (
-              <Countdown
-                date={startDate}
-                onMount={({ completed }) => completed && setIsActive(true)}
-                onComplete={() => setIsActive(true)}
-                renderer={renderCounter}
-              />
-            )}
-          </MintButton>
+                <Countdown
+                  date={startDate}
+                  onMount={({ completed }) => completed && setIsActive(true)}
+                  onComplete={() => setIsActive(true)}
+                  renderer={renderCounter}
+                />
+              )}
+            </MintButton>
+          )}
+        </MintContainer> 
+       :(
+          <p style={{fontSize:"18px",marginTop:"100px"}}>{days.toString().padStart(2,"0")}:{hours.toString().padStart(2,"0")}:{minutes.toString().padStart(2,"0")}:{seconds.toString().padStart(2,"0")}</p>
         )}
-      </MintContainer>
+      
    
           <div className={classes.bottom}>
             <p>Minting cost?</p>
