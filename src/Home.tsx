@@ -212,7 +212,7 @@ const Home = (props: HomeProps) => {
     }
   };
 
-  const difference = +dayjs.utc('11-04-2021 00:00:00') - +new Date();
+  const difference = +dayjs.utc('11-04-2021 13:00:00') - +new Date();
 
   useEffect(() => {
     const id = setTimeout(() => {
@@ -257,7 +257,7 @@ const Home = (props: HomeProps) => {
           <a href="#"><img src={Twitter} alt="" /></a>
        </div>
         <h4>Mint</h4>
-        <p>mint times is september 14 th 1:00 PM UTC time</p>
+        <p>mint times is November 4th 1:00 PM UTC time</p>
        { difference < 0 ?
        <div>
        <div className={classes.walletWrapper}>
@@ -317,7 +317,7 @@ const Home = (props: HomeProps) => {
    
           <div className={classes.bottom}>
             <p>Minting cost?</p>
-            <p>.5 sol for all 5000 unit</p>
+            <p>0.5 sol for all 5000 unit</p>
           </div>
        
         </Container>

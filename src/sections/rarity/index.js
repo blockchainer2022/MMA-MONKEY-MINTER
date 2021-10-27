@@ -1,11 +1,15 @@
 import { Container, Grid, Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import Image1 from "../../assets/Layer1.png";
-import Image2 from "../../assets/Layer2.png";
-import Image3 from "../../assets/Layer3.png";
-import Image4 from "../../assets/Layer4.png";
+import Image1 from "../../assets/1.png";
+import Image2 from "../../assets/2.png";
+import Image3 from "../../assets/3.png";
+import Image4 from "../../assets/4.png";
+import Image5 from "../../assets/5.png";
+import Image6 from "../../assets/6.png";
+import Image7 from "../../assets/7.png";
+import Image8 from "../../assets/8.png";
 
-const Images = [Image1, Image2, Image3, Image4, Image2, Image1, Image4, Image3];
+const Images = [Image1, Image2, Image3, Image4, Image5, Image6, Image7, Image8];
 
 const useStyles = makeStyles({
   root: {
