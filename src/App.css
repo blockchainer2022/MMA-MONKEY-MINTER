@@ -20,8 +20,7 @@ body {
 }
 .hero-section {
   color: rgba(255, 255, 255, 0.87);
-  min-height: 100vh;
-  padding-bottom: 50px;
+  /* padding-bottom: 50px; */
 }
 .hero-section .MuiButton-containedPrimary {
   background: white;

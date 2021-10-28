@@ -7,12 +7,12 @@ const useStyles = makeStyles({
     paddingBottom: "50px",
     "& .container": {
       borderTop: "2px solid white",
-      padding: "50px 0",
+      padding: "10px 0",
     },
   },
   header: {
     fontSize: 18,
-    marginBottom: 50,
+    marginBottom: 30,
   },
   content: {
     marginTop: "100px",

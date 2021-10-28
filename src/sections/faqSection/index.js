@@ -28,7 +28,7 @@ const useStyles = makeStyles({
     paddingBottom: "50px",
     "& .container": {
       borderTop: "2px solid white",
-      padding: "50px 0",
+      padding: "10px 0",
     },
   },
   header: {
@@ -47,6 +47,7 @@ const useStyles = makeStyles({
     backgroundColor: "white",
     padding: "10px 0",
     borderRadius: "10px",
+    cursor: "pointer",
   },
   show: {
     padding: "10px 0 0 0",

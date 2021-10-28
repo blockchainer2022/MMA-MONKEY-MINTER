@@ -4,8 +4,8 @@ import { Container } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 const useStyles = makeStyles((theme) => ({
   root: {
-    paddingTop: "1.5rem",
-    paddingBottom: "1.5rem",
+    paddingTop: "1rem",
+    paddingBottom: "10px",
     borderBottom: "2px solid white",
     position: "relative",
     [theme.breakpoints.down("xs")]: {
@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
       display: "inline-block",
       textDecoration: "none",
       marginLeft: "20px",
-      fontSize: "16px",
+      fontSize: "14px",
     },
   },
   menubar: {

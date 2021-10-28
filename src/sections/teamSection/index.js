@@ -38,7 +38,7 @@ const useStyles = makeStyles({
     paddingBottom: "50px",
     "& .container": {
       borderTop: "2px solid white",
-      padding: "50px 0",
+      padding: "10px 0",
     },
     "& h5": {
       fontSize: 10,
@@ -52,7 +52,7 @@ const useStyles = makeStyles({
   },
   header: {
     fontSize: 18,
-    marginBottom: 50,
+    marginBottom: 40,
   },
 });
 
@@ -63,7 +63,7 @@ const Index = () => {
       <Container className="container">
         <Container maxWidth="md">
           <h2 className={classes.header}>Team Member</h2>
-          <Grid container spacing={2}>
+          <Grid container spacing={2} style={{ marginBottom: "20px" }}>
             {data.map((v, i) => (
               <Grid item xs={12} sm={6} md={3} lg={3} key={i}>
                 <img src={v.image} alt="" style={{ width: "100%" }} />

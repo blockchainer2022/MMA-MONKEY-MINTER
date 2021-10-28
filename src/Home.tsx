@@ -37,8 +37,8 @@ const useStyles = makeStyles((theme)=>({
    textAlign:"center",
 
    "& h1":{
-     fontSize:"30px",
-     marginBottom:"0",
+     fontSize:"26px",
+     marginTop:"50px",
      [theme.breakpoints.down("md")]: {
      fontSize:"18px",
       
@@ -326,7 +326,10 @@ const Home = (props: HomeProps) => {
         </MintContainer> 
         </div>
        :(
-          <p style={{fontSize:"18px",marginTop:"100px"}}>{days.toString().padStart(2,"0")}:{hours.toString().padStart(2,"0")}:{minutes.toString().padStart(2,"0")}:{seconds.toString().padStart(2,"0")}</p>
+         <>
+          <Button variant="contained" disabled>Mint now</Button>
+          <p style={{fontSize:"18px",marginTop:"30px"}}>{days.toString().padStart(2,"0")}:{hours.toString().padStart(2,"0")}:{minutes.toString().padStart(2,"0")}:{seconds.toString().padStart(2,"0")}</p>
+        </>
         )}
       
    
