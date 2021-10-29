@@ -12,7 +12,7 @@ const accordianData = [
     answer: ".5 SOL for all 5000 MMA Monkeys. ",
   },
   {
-    question: "Where can i buy or sel MMA monkeys?",
+    question: "Where can i buy or sell MMA monkeys?",
     answer:
       "After mint, a marketplace will be available on DigitalEyes. We will be working on other Marketplaces as well. ",
   },
