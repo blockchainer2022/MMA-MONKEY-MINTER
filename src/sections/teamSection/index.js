@@ -62,7 +62,7 @@ const Index = () => {
     <section className={classes.root} id="team">
       <Container className="container">
         <Container maxWidth="md">
-          <h2 className={classes.header}>Team Member</h2>
+          <h2 className={classes.header}>Team Members</h2>
           <Grid container spacing={2} style={{ marginBottom: "20px" }}>
             {data.map((v, i) => (
               <Grid item xs={12} sm={6} md={3} lg={3} key={i}>

@@ -48,7 +48,7 @@ const Index = () => {
         </Grid>
         <div className={classes.bottom}>
           <h3>All Rarity</h3>
-          <p>Show al rarity please click herer</p>
+          <p>To Show All Rarity Please Click Here</p>
           <Button variant="contained">View all</Button>
         </div>
       </Container>
